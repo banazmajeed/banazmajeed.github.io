@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample of a Personal Webpage</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            
+        }
+        th, td {
+             text-align: left;
+             padding: 7px;
+        }
+        th{
+            background-color: lightblue;
+        }
+        td{
+            background-color: lightcyan;
+        }
+
+        body{
+
+            margin: 25px 100px 75px 35px;
+            background-color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+       
+    </style>
+    <!--This function is used when the input valued is entered to change the values to uppercase-->
+    <script>
+        function myFunction (){
+            var x = document.getElementById("name");
+            x.value=x.value.toUpperCase();
+        }
+        function myFunction(){
+            var x = document.getElementById("email");
+            x.value=x.value.toUpperCase();
+        }
+
+
+    </script>
+    
+</head>
+<body>
+
+ <h1 id="id1" style="font-size: 35px; color:rgb(30, 37, 98);" >  Welcome to Banaz's Personal Webpage </h1>   
+  
+ <button type="button" onclick="document.getElementById('id1').style.color='brown'">Click</button> <!--  button added to change the color of the heading -->
+
+ <hr>
+ <h2 style="color: rgb(12, 24, 151);">  About Me</h2>
+ <p>   Hello! My name is Banaz, and I'm a student at AUK. I enjoy learning new things, especially in the fields of web development and coding.</p>
+ <h2 style="color: rgb(12, 24, 151);">  Projects </h2>
+ <p>   Here are a few projects I've worked on:</p>
+ <ul>
+    <li> Project 1: HTML.</li>
+    <li> Project 2: CSS.</li>
+    <li> Project 3: JavaScript.</li>
+ </ul>
+ <h2 style="color: rgb(12, 24, 151);">  Skills</h2>
+ <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+ </ol>
+ <h2 style="color: rgb(12, 24, 151);">  Coursework</h2>
+ <p>  Here is a table showing some of the courses I've taken:</p>
+
+ <!--- The content of the table changes when you mouse over --> 
+
+ <table   onmouseover= "mOver(this)"        style="width: 28%">
+    <tr>
+        <th style="color: rgb(12, 24, 151);">Course Name</th>
+        <th style="color: rgb(12, 24, 151);">Instructor</th>
+        <th style="color: rgb(12, 24, 151);">Year</th>
+    </tr>
+    <tr>
+        <td>Introduction to Programming</td>
+        <td>Prof. A</td>
+        <td>2023</td> 
+    </tr>
+    <tr>
+        <td>Data Structures & Algorithm</td>
+        <td>Prof. B</td>
+        <td>2024</td>
+    </tr>
+    <tr>
+        <td>Web Applications Development I</td>
+        <td>Prof. C</td>
+        <td>2024</td>
+    </tr>
+ </table>
+ <!-- Function for changing the value of the table-->
+<script>
+    function mOver(obj){      
+        obj.innerHTML = "Done!"
+    }
+
+</script>
+
+
+
+
+ <h2 style="color: rgb(12, 24, 151);">  Contact Me </h2>
+ <form actiom="">
+    <label for="name"</label>Name:</label>
+    <input type="text" id="name" name="name"required  onchange="myFunction()"><br><br>   <!-- The function is called-->
+    <label for="email"</label>Email:</label>
+    <input type="text" id="email" name="email"required  onchange="myFunction()"><br><br>  <!-- The function is called-->
+    <label for="message"</label>Message:</label><br>
+    <textarea id="message" name="message" style="width:20% ; height: 90px;" required  ></textarea><br><br>
+    <input type="submit" value="submit">
+    
+ </form>
+
+
+
+
+ <hr>
+ <h2 style="color: rgb(12, 24, 151);">Photo Gallery</h2>
+ <p>Here are some photos of my favorite activities:</p>
+ <img src="image 1.jpg" alt="read" width="200"/>
+ <img src="image 2.avif" alt="read" width="216"/>
+
+
+
+
+ <h2 style="color: rgb(12, 24, 151);">Favorite Quotes</h2>
+ <p id="parent"   style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 35px; text-align: left;">"Success is not final,<br>
+    failure is not fatal:<br>
+    It is the courage to continue that counts."</i><br>
+    - <span id="child"   style="color: rgb(23, 83, 234) ;">Winston S. Churchill</span>
+</p>
+
+<script>                                    <!--Capturing , the event moves from parent to child ---->
+    function parentClick(){
+        console.log("parent clicked");
+    }
+    function childClick(){
+console.log("child clicked");
+    }
+
+
+    var parent = document.getElementById("parent");
+    var child = document.getElementById("child");
+
+    parent.addEventListener("click", parentClick, true);
+    child.addEventListener("click", childClick, true);
+</script>
+
+
+ <hr>
+ <p>&copy 2024 Banaz. All rights reserved.</p>
+
+</body>
+</html> 
